@@ -25,7 +25,7 @@ Escrevi em um docs e fiz um rascunho no Draw.io e depois pedi para o Claude lapi
 
 #### Diagrama de Rascunho no Draw.io:
 
-![Diagrama_Draw.io](diagrama.png)
+![Diagrama_Draw.io](diagramas.png)
 
 #### Diagrama Lapidado com IA:
 
@@ -198,3 +198,6 @@ Esse log mostra a ordem esperada: `train` termina com código 0, e só então a 
 - Fazer validação walk-forward, em vez de um único split.
 - Atualizar o CSV automaticamente por API (Binance ou CoinGecko) e retreinar de forma agendada.
 - Versionar os artefatos (por exemplo, models/<timestamp>/) e permitir que a API escolha a versão.
+
+### 7. Declaração de uso de IA
+Utilizei o Claude para toda a sintexe de código e as ideias de processo e fluxo do que fazer foram minhas. Além disso, usei, conforme supracitado, para lapidar meu diagrama UML.
