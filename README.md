@@ -1,1 +1,8 @@
-# atividade_semana_10_m07
+# Atividade Semana 10 Módulo 07
+Nicolli Venino Santana
+
+## Contexto: 
+
+## A solução funciona como:
+
+## Devlog:
