@@ -1,0 +1,7 @@
+$ docker compose --profile client run --rm client
+[health] {'status': 'ok', 'model_loaded': True}
+[request] POST http://api:8000/predict com 31 fechamentos (2026-09-04 -> 2026-10-04)
+[response] {'last_close': 86510.16, 'predicted_log_return': -0.000447, 'predicted_change_pct': -0.0447, 'predicted_next_close': 86471.47, 'model': 'ridge', 'disclaimer': 'Predição experimental; não é recomendação de investimento.', 'last_date': '2026-10-04', 'target_date': '2026-10-05'}
+
+BTC-USD em 2026-10-04: $86,510.16
+Previsão para 2026-10-05: $86,471.47 (-0.045%) [modelo: ridge]

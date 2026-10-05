@@ -1,0 +1,37 @@
+services:
+  # 1) Container de treinamento: roda uma vez, grava o artefato em ./models e encerra
+  train:
+    build:
+      context: .
+      dockerfile: training/Dockerfile
+    volumes:
+      - ./data:/app/data:ro
+      - ./models:/app/models
+
+  # 2) Container de inferência: só sobe depois que o treino terminou com sucesso
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    depends_on:
+      train:
+        condition: service_completed_successfully
+    ports:
+      - "${API_PORT:-8000}:8000"   # porta do host configurável (ex.: API_PORT=8080)
+    volumes:
+      - ./models:/app/models:ro
+      - ./data:/app/data:ro
+
+  # 3) Aplicação cliente: faz uma requisição de predição ao backend
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    profiles: ["client"]
+    environment:
+      API_URL: http://api:8000
+    volumes:
+      - ./data:/app/data:ro
+    depends_on:
+      api:
+        condition: service_healthy

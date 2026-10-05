@@ -1,0 +1,10 @@
+$ docker compose run --rm train
+[dados] 4328 linhas de 2014-11-28 a 2026-10-04
+[split] treino 2018-01-01 -> 2024-12-31 (2557 linhas)
+[split] teste  2025-01-01 -> 2026-10-03 (640 linhas)
+[avaliação] métricas no conjunto de teste (preço do dia seguinte):
+  naive_last_close   MAE=$ 1,399.45  RMSE=$ 1,977.00  MAPE=1.596%  acerto direção=n/a%
+  ridge              MAE=$ 1,406.06  RMSE=$ 1,985.39  MAPE=1.603%  acerto direção=49.38%
+  gradient_boosting  MAE=$ 1,424.42  RMSE=$ 2,003.10  MAPE=1.620%  acerto direção=47.97%
+[seleção] melhor modelo por MAE: ridge
+[export] models/model.joblib e models/metadata.json salvos

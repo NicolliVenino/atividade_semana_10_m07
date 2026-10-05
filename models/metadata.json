@@ -1,0 +1,56 @@
+{
+  "model_name": "ridge",
+  "target": "log-retorno do fechamento do dia seguinte; preço = close_hoje * exp(pred)",
+  "asset": "BTC-USD",
+  "frequency": "diária",
+  "horizon_days": 1,
+  "window": 30,
+  "features": [
+    "ret_lag_1",
+    "ret_lag_2",
+    "ret_lag_3",
+    "ret_lag_4",
+    "ret_lag_5",
+    "ret_lag_6",
+    "ret_lag_7",
+    "ret_mean_7",
+    "ret_mean_30",
+    "vol_7",
+    "vol_30",
+    "close_sma7_ratio",
+    "close_sma30_ratio"
+  ],
+  "train_period": [
+    "2018-01-01",
+    "2024-12-31"
+  ],
+  "final_fit_period": [
+    "2018-01-01",
+    "2026-10-03"
+  ],
+  "test_period": [
+    "2025-01-01",
+    "2026-10-03"
+  ],
+  "test_metrics": {
+    "naive_last_close": {
+      "mae_usd": 1399.45,
+      "rmse_usd": 1977.0,
+      "mape_pct": 1.596,
+      "direction_acc_pct": null
+    },
+    "ridge": {
+      "mae_usd": 1406.06,
+      "rmse_usd": 1985.39,
+      "mape_pct": 1.6028,
+      "direction_acc_pct": 49.38
+    },
+    "gradient_boosting": {
+      "mae_usd": 1424.42,
+      "rmse_usd": 2003.1,
+      "mape_pct": 1.6199,
+      "direction_acc_pct": 47.97
+    }
+  },
+  "trained_at": "2026-10-05T17:24:37+00:00"
+}

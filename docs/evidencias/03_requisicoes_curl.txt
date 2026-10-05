@@ -1,0 +1,11 @@
+$ curl -s http://localhost:8080/health
+{"status":"ok","model_loaded":true}
+
+$ curl -s http://localhost:8080/predict/latest
+{"last_close":86510.16,"predicted_log_return":-0.000447,"predicted_change_pct":-0.0447,"predicted_next_close":86471.47,"model":"ridge","disclaimer":"Predição experimental; não é recomendação de investimento.","last_date":"2026-10-04","target_date":"2026-10-05"}
+
+$ curl -s -X POST http://localhost:8080/predict -H "Content-Type: application/json" -d "{\"closes\": [100, 101, 102]}"   # teste de erro: poucos dados
+{"detail":"Envie pelo menos 31 fechamentos (recebido 3)."}
+
+$ curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/docs
+200

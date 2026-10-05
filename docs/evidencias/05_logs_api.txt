@@ -1,0 +1,11 @@
+$ docker compose logs api
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+[startup] modelo 'ridge' carregado de models/model.joblib
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     172.21.0.1:50730 - "GET /predict/latest HTTP/1.1" 200 OK
+INFO:     172.21.0.1:50746 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     172.21.0.1:50750 - "GET /docs HTTP/1.1" 200 OK
+INFO:     172.21.0.3:59876 - "POST /predict HTTP/1.1" 200 OK
+INFO:     172.21.0.3:48222 - "POST /predict HTTP/1.1" 200 OK
